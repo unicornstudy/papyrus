@@ -1,0 +1,5 @@
+kakao-base-url: "https://api.kakaobrain.com"
+
+gpt-base-url: "https://api.openai.com"
+kakao-api-key: "${KAKAO_API_KEY}"
+gpt-api-key: "${GPT_API_KEY}"
