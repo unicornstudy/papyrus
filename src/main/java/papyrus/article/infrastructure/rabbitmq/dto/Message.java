@@ -1,28 +1,20 @@
-package papyrus.article.domain;
+package papyrus.article.infrastructure.rabbitmq.dto;
 
-import jakarta.persistence.Id;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.elasticsearch.annotations.Document;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-@Document(indexName = "articles")
-public class ElasticSearchArticle {
-
-    @Id
-    private Long id;
+@Getter
+public class Message {
 
     private String title;
-
     private String reporter;
-
     private String category;
-
     private String press;
-
     private List<String> paragraphs;
 }
