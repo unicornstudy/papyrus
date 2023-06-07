@@ -18,4 +18,6 @@ public class Article {
     private String category;
 
     private String press;
+
+    private String platform;
 }

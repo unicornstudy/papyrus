@@ -29,4 +29,12 @@ public class WebclientConfig {
                 })
                 .build();
     }
+
+    @Bean
+    public WebClient slackWebClient(@Value("${slack-base-url}") String baseUrl) {
+        return WebClient.builder()
+                .baseUrl(baseUrl)
+                .defaultHeader("Content-Type", "application/json")
+                .build();
+    }
 }

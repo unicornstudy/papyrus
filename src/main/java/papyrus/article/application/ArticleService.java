@@ -13,7 +13,7 @@ public class ArticleService {
     private final ArticleRepository articleRepository;
 
     @Transactional
-    public void save(Message message){ // enum 넣기 ?
+    public void save(Message message) {
         articleRepository.save(message);
     }
 }

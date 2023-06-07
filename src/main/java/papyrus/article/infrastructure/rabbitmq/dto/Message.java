@@ -17,4 +17,5 @@ public class Message {
     private String category;
     private String press;
     private List<String> paragraphs;
+    private String platform;
 }

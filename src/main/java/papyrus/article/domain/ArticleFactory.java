@@ -15,6 +15,7 @@ public enum ArticleFactory {
                     .title(message.getTitle())
                     .category(message.getCategory())
                     .reporter(message.getReporter())
+                    .platform(message.getPlatform())
                     .build();
         }
     },
@@ -27,6 +28,7 @@ public enum ArticleFactory {
                     .title(message.getTitle())
                     .category(message.getCategory())
                     .reporter(message.getReporter())
+                    .platform(message.getPlatform())
                     .build();
         }
     };
@@ -35,6 +37,6 @@ public enum ArticleFactory {
 
     private static String convertParagraphs(List<String> paragraphs) {
         return paragraphs.stream()
-                .collect(Collectors.joining(" "));
+                .collect(Collectors.joining());
     }
 }
