@@ -1,10 +1,10 @@
 package papyrus.article.domain;
 
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.springframework.data.annotation.Id;
 
 @NoArgsConstructor
 @AllArgsConstructor

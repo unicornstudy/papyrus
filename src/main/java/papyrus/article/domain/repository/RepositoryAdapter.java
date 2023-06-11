@@ -23,10 +23,9 @@ public class RepositoryAdapter implements ArticleRepository {
 
     @Override
     public void save(Message message) {
-        Document document = (Document) ArticleFactory.DOCUMENT.createArticle(message);
-        News news = (News) ArticleFactory.NEWS.createArticle(message);
+        News news = (News) ArticleFactory.NEWS.createArticle(message, null);
 
-        newsRepository.save(news);
+        Document document = (Document) ArticleFactory.DOCUMENT.createArticle(message, newsRepository.save(news).getId());
         documentRepository.save(document);
     }
 
@@ -37,5 +36,10 @@ public class RepositoryAdapter implements ArticleRepository {
         return Optional.ofNullable(cursorId)
                 .map(id -> documentRepository.findAllByCursor(id, pageable))
                 .orElseGet(() -> documentRepository.findAll(pageable).getContent());
+    }
+
+    @Override
+    public Optional<Document> findById(Long id) {
+        return documentRepository.findById(id);
     }
 }
