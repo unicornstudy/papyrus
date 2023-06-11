@@ -8,7 +8,7 @@ public enum ArticleFactory {
 
     NEWS {
         @Override
-        public Article createArticle(Message message) {
+        public Article createArticle(Message message, Long id) {
             return News.builder()
                     .paragraphs(convertParagraphs(message.getParagraphs()))
                     .press(message.getPress())
@@ -21,8 +21,9 @@ public enum ArticleFactory {
     },
     DOCUMENT {
         @Override
-        public Article createArticle(Message message) {
+        public Article createArticle(Message message, Long id) {
             return Document.builder()
+                    .id(id)
                     .paragraphs(convertParagraphs(message.getParagraphs()))
                     .press(message.getPress())
                     .title(message.getTitle())
@@ -33,7 +34,7 @@ public enum ArticleFactory {
         }
     };
 
-    public abstract Article createArticle(Message message);
+    public abstract Article createArticle(Message message, Long id);
 
     private static String convertParagraphs(List<String> paragraphs) {
         return paragraphs.stream()

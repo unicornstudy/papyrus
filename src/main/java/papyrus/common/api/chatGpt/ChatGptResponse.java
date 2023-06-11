@@ -12,4 +12,8 @@ public class ChatGptResponse {
     private String model;
     private ChatGptUsage usage;
     private List<ChatGptChoice> choices;
+
+    public String getParagraphs() {
+        return choices.get(0).getMessage().getContent();
+    }
 }
