@@ -13,4 +13,8 @@ public interface DocumentRepository extends ElasticsearchRepository<Document, Lo
         CrudRepository<Document, Long> {
     @Query("{\"bool\": {\"must\": {\"range\": {\"id\": {\"lt\": \"?0\"}}}}}")
     List<Document> findAllByCursor(@Param("cursorId") Long cursorId, Pageable pageable);
+
+    @Query("{\"bool\": {\"should\": [{\"match\": {\"title\": \"?0\"}}, {\"match\": {\"paragraphs\": \"?0\"}}]}}")
+    List<Document> findAllByTitleOrParagraphs(String word);
+
 }

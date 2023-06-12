@@ -12,4 +12,6 @@ public interface ArticleRepository {
     void save(Message message);
     List<Document> findAllByCursor(Long cursorId, int limit);
     Optional<Document> findById(Long id);
+
+    List<Document> findAllByParagraphsContainingOrTitleContaining(String word);
 }
