@@ -49,5 +49,12 @@ public class ArticleService {
                 });
     }
 
+    public List<ArticleResponse> findAllByParagraphsContainingOrTitleContaining(String word) {
+        return articleRepository.findAllByParagraphsContainingOrTitleContaining(word)
+                .stream()
+                .map(ArticleResponse :: from)
+                .toList();
+    }
+
 
 }

@@ -42,4 +42,9 @@ public class RepositoryAdapter implements ArticleRepository {
     public Optional<Document> findById(Long id) {
         return documentRepository.findById(id);
     }
+
+    @Override
+    public List<Document> findAllByParagraphsContainingOrTitleContaining(String word) {
+        return documentRepository.findAllByTitleOrParagraphs(word);
+    }
 }
