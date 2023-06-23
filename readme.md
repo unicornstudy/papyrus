@@ -22,3 +22,6 @@ Papyrus 는 포털 사이트의 뉴스 기사들을 수집하여, 뉴스 요약 
 
 ![image](https://github.com/unicornstudy/papyrus/assets/91658692/496ab1d6-e821-497c-a980-6b58b5120546)
 
+---
+### 노션 페이지
+프로젝트의 자세한 사항은 [노션](https://www.notion.so/Papyrus-a15da635be7c43c5ac60589ed3fed1d7)에 담았습니다.
